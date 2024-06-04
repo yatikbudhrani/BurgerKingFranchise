@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burger King Franchise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      img {
+        border: 2px solid black;
+      }
+      #loading {
+        width: 2rem;
+        height: 2rem;
+        border: 5px solid #f3f3f3;
+        border-top: 6px solid #9c41f2;
+        border-radius: 100%;
+        margin: auto;
+        visibility: hidden;
+        animation: spin 1s infinite linear;
+      }
+      #loading.display {
+        visibility: visible;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center pt-4">
+    <button
+      class="h-10 px-6 font-semibold rounded-md bg-black text-white"
+      id="orderButton"
+    >
+      Place Order
+    </button>
+    <div id="checkboxContainer" class="flex items-center gap-2 mt-3">
+      <input
+        class="w-[20px] h-[20px] hover:cursor-pointer"
+        type="checkbox"
+        name="burger"
+        id="burger"
+      />
+      <label for="burger" class="mr-3">Burger</label>
+      <input
+        class="w-[20px] h-[20px] hover:cursor-pointer"
+        type="checkbox"
+        name="frenchfries"
+        id="frenchfries"
+      />
+      <label for="frenchfries" class="mr-3">French Fries</label>
+      <input
+        class="w-[20px] h-[20px] hover:cursor-pointer"
+        type="checkbox"
+        name="colddrink"
+        id="colddrink"
+      />
+      <label for="colddrink" class="mr-3">Cold Drink</label>
+    </div>
+
+    <div class="mt-10 text-red-500 font-semibold text-2xl" id="orderNo"></div>
+
+    <div id="imageContainer"></div>
+    <div id="loading"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
